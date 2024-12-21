@@ -29,3 +29,12 @@ def mask_account_card(input_data: str) -> str:
             return f"{card_name} {masked_card}"  # Возвращаем строку в формате "Тип карты XXXX XX** **** XXXX"
 
 
+from datetime import datetime
+
+
+def get_date(date_string: str) -> str:
+    # Преобразуем строку в объект datetime
+    date_obj = datetime.fromisoformat(date_string)
+
+    # Форматируем в 'DD.MM.YYYY'
+    return date_obj.strftime('%d.%m.%Y')

@@ -1,5 +1,6 @@
-from src.widget import mask_account_card
+from src.widget import mask_account_card, get_date
 
-print(mask_account_card('Счет 73654108430135874305'))  # Ожидается: "Счет **4305"
-print(mask_account_card('Visa Platinum 7000792289606361'))  # Ожидается: "Visa Platinum 7000 79** **** 6361"
-print(mask_account_card('Maestro 7000792289606361'))  # Ожидается: "Maestro 7000 79** **** 6361"
+
+print(mask_account_card('Счет 12345678901234567890')) # должны увидеть: Счет **7890
+print(mask_account_card('Visa Super Puper 1234567890123456')) # Visa Super Puper 1234 56** **** 3456
+print(get_date('2024-12-18T01:28:30.012345')) # 18.12.2024
